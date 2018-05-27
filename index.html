@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Chemical Clock">
+    <meta name="keywords" content="Chem,Clock,DeSpider,Md Sadiqur Rahman">
+    <meta name="author" content="Md Sadiqur Rahman">
+    <title>
+        ChemClock</title>
+    <style>
+    body {
+        background: black;
+    }
+
+    .clock {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        color: #17D4FE;
+        font-size: 60px;
+        font-family: Orbitron;
+        letter-spacing: 7px;
+
+
+    }
+    </style>
+</head>
+<body>
+    <div id="MyClockDisplay" class="clock"></div>
+    <script>
+        function showTime(){
+        var date = new Date();
+        var h = date.getHours(); 
+        var m = date.getMinutes(); 
+        var s = date.getSeconds();
+
+        function chemify(x) {
+            let elems = ["..", "H", "He", "Li", "Be", "B", "C", "N", "O", "F", "Ne", "Na", "Mg", "Al", "Si", "P", "S", "Cl", "Ar", "K", "Ca", "Sc", "Ti", "V", "Cr", "Mn", "Fe", "Co", "Ni", "Cu", "Zn", "Ga", "Ge", "As", "Se", "Br", "Kr", "Rb", "Sr", "Y", "Zr", "Nb", "Mo", "Tc", "Ru", "Rh", "Pd", "Ag", "Cd", "In", "Sn", "Sb", "Te", "I", "Xe", "Cs", "Ba", "La", "Ce", "Pr", "Nd"];
+            return elems[x];
+        }
+
+        var time = chemify(h) + ":" + chemify(m) + ":" + chemify(s);
+        document.getElementById("MyClockDisplay").innerText = time;
+        document.getElementById("MyClockDisplay").textContent = time;
+        
+        setTimeout(showTime, 1000);
+        
+    }
+
+    showTime();
+    </script>
+</body>
+</html>
