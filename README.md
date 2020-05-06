@@ -1,3 +1,3 @@
-# chem_clock
-Simply drag the html file to a browser. TADAA!!
+# chem clock
+Simply drag the html file to a browser.
 Live Demo: http://despider.com/clock/
